@@ -34,6 +34,9 @@ La activación de un altavoz para generar una alarma sonora refuerza la capacida
 ### FPGA
 
 La FPGA actúa como el núcleo o cerebro del sistema, coordinando todas las operaciones. Su capacidad de programación flexible permite adaptarse a diversas configuraciones y requisitos del proyecto. La FPGA determina el flujo de acciones según las señales de entrada y se comunicará constantemente con el servidor alojado en el microcontrolador ESP32
+A continuación, se muestra el RTL de la capa principal a modo de ilustración de la arquitectura.
+
+![Esquema del sistema](MiCodigo/top.png)
 
 ### Sensor de Movimiento y Sensor de Gas
 
