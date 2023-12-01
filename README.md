@@ -65,7 +65,7 @@ La compilación del código fuente y la carga del programa en la FPGA se realiza
 El usuario puede monitorear las notificaciones del bot de Telegram para recibir alertas en tiempo real sobre eventos detectados. Además, la activación del altavoz proporciona una señal sonora adicional. Mediante este mismo bot, el usuarió podra desactivar la alarma en caso de ser necesario.
 ## Conclusiones
 
-El proyecto ha logrado cumplir con los objetivos establecidos, proporcionando un sistema funcional y robusto de alarma utilizando una FPGA. La combinación de la detección de movimiento, la interacción con un teclado matricial y la generación de sonido ofrece una solución completa para la aplicación propuesta.
+El proyecto ha logrado cumplir con los objetivos establecidos, proporcionando un sistema funcional y robusto de alarma utilizando una FPGA. La combinación de la detección de movimiento, la interacción con un bot de telegram, la generación de sonido en conjunto a una monitorización constante y en tiempo real, ofrece una solución completa para la aplicación propuesta.
 
 ## Mejoras Futuras
 
