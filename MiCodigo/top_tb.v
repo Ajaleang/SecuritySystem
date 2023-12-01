@@ -1,61 +1,70 @@
-`timescale 10ns/10ns
-module testbech;
-  /* // Determinar el tamaño de los wire como de los estímulos */
-  /* parameter INPUT_SIZE = 3; */
-  parameter OUTPUT_SIZE = 1;
+module tb_top;
 
-  /* // STIMULUS 1 */
-  /* reg a = 0, b = 0; */
-  /* initial */
-  /* begin */
-  /*    # 17 a = 1, b = 1; */
-  /*    # 11 a = 1, b = 0; */
-  /*    # 29 a = 1, b = 1; */
-  /*    # 11 a = 1, b = 0; */
-  /*    # 100 $finish(); // [stop(), $finish()] */
-  /* end */
+  // Parámetros para el reloj
+  reg clk;
+  reg sw_on;
+  reg gases;
+  reg movimiento;
+  reg clave;
 
-  /* // STIMULUS 2 */
-  /* reg [INPUT_SIZE-1:0] inputs; */
-  /* /1* inputs[2] inputs[1] inputs[1] *1/ */
-  /* integer i; */
-  /* initial */
-  /* begin */
-  /*   /1* inputs = 0; *1/ */
-  /*   for (i=0; i<2**INPUT_SIZE; i=i+1) // 2 elevado a la INPUT_SIZE , en el ejemplo 2^3 = 8 combinaciones*/
-  /*   begin */
-  /*     inputs = i; */
-  /*     #1; */
-  /*   end */
-  /* end */
+  // Salidas del módulo
+  wire led;
+  wire sound;
+  wire mensaje;
 
-  // CLOCK STIMULUS
-  // Make a regular pulsing clock.
-  reg clk = 0;
-  always #2 clk = !clk;
+  // Instancia del módulo top
+  top #(.INIT(0)) uut (
+    .clk(clk),
+    .sw_on(sw_on),
+    .gases(gases),
+    .movimiento(movimiento),
+    .clave(clave),
+    .led(led),
+    .sound(sound),
+    .mensaje(mensaje)
+  );
 
-  initial
-  begin
-    #100 $finish(); // [stop(), $finish()]
+  // Generador de reloj
+  initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
   end
 
-  /* // RESULT FOR DEVICE/DESIGN UNDER TEST */
-  wire [OUTPUT_SIZE-1:0] value;
+  // Test case
+  initial begin
+    // Configuración inicial
+    sw_on = 1;
+    gases = 0;
+    movimiento = 0;
+    clave = 1;
 
-  // DEVICE/DESIGN UNDER TEST
-  top #(.INIT(26'd49999990)) dut (.clk(clk), .led(value[0]));
+    // Caso 1: Activar gases
+    #10 gases = 1;
 
-  // MONITOR
-  initial
-    $monitor("Time: %t, out = %d",
-      $time, value[0]);
+    // Caso 2: Movimiento detectado y clave desactivada
+    #10 movimiento = 1;
+    #10 clave = 0;
 
-  // WAVES IN VCD TO OPEN IN GTKWAVE
+    // Caso 3: Cambiar clave y desactivar gases
+    #10 clave = 1;
+    #10 gases = 0;
+
+    // Caso 4: Activar interruptor general
+    #10 sw_on = 0;
+
+    // Caso 5: Combinación de condiciones
+    #10 sw_on = 1;
+    #10 gases = 1;
+    #10 movimiento = 1;
+    #10 clave = 0;
+
+    // Finalizar simulación después de algunas unidades de tiempo
+    #100 $finish;
+  end
   initial
   begin
     $dumpfile("top.vcd");
-    $dumpvars(0, testbech);
+    $dumpvars(0, tb_top);
   end
-
 
 endmodule

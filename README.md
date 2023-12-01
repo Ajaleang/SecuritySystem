@@ -38,6 +38,9 @@ A continuación, se muestra el RTL de la capa principal a modo de ilustración d
 
 ![Esquema del sistema](MiCodigo/top.png)
 
+
+La salida llamada "mensaje" es la encargada de comunicar los datos adquiridos por la FPGA en el servidor remoto alojado en la ESP32.
+
 ### Sensor de Movimiento y Sensor de Gas
 
 La correcta conexión y calibración de estos sensores son esenciales para garantizar una detección precisa. Las señales analógicas se convierten digitalmente y son procesadas por la FPGA para su interpretación.
@@ -55,6 +58,45 @@ La activación del altavoz se realiza en respuesta a eventos detectados, proporc
 ### Conexión de Sensores y funcionamiento de la FPGA
 
 Es crucial seguir las instrucciones de conexión de los sensores a la FPGA para garantizar un funcionamiento adecuado del sistema.
+
+
+# Simulaciones
+
+Este repositorio incluye simulaciones del módulo `top`, el cual es un componente principal  del sistema. Las simulaciones se han diseñado para verificar el comportamiento del módulo bajo diversas condiciones y escenarios.
+
+## Descripción del Módulo
+
+El módulo `top` está diseñado para gestionar diversas entradas, como señales de reloj, interruptores, sensores de gases, movimientos y claves, y produce salidas correspondientes, incluidos LEDs, sonidos y mensajes.
+
+
+## Simulaciones Realizadas
+
+1. **Activación de Gases:**
+   - Escenario: Se activa la señal de gases.
+   - Objetivo: Verificar la respuesta del módulo ante la activación de gases.
+
+2. **Detección de Movimiento y Desactivación de Clave:**
+   - Escenario: Se detecta movimiento y se desactiva la clave.
+   - Objetivo: Confirmar el correcto funcionamiento del módulo en condiciones de movimiento y clave desactivada.
+
+3. **Cambio de Clave y Desactivación de Gases:**
+   - Escenario: Se cambia la clave y se desactiva la señal de gases.
+   - Objetivo: Evaluar la respuesta del módulo a cambios en la clave y la señal de gases.
+
+4. **Activación del Interruptor General:**
+   - Escenario: Se activa el interruptor general.
+   - Objetivo: Comprobar el comportamiento del módulo al activar el interruptor general.
+
+5. **Condiciones Combinadas:**
+   - Escenario: Se activan simultáneamente el interruptor general, la señal de gases, el movimiento y se desactiva la clave.
+   - Objetivo: Verificar la capacidad del módulo para gestionar múltiples condiciones concurrentes.
+
+## Ejecución de las Simulaciones
+
+Para ejecutar las simulaciones, se automatiza el proceso con el makefile estudiado durante el curso
+A continuación se muestran los resultados de las simulaciones. 
+
+![Esquema del sistema](Resultado de la simulación: "GTKWAVE" /simu.png)
 
 
 
