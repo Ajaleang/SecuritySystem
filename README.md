@@ -96,7 +96,7 @@ El módulo `top` está diseñado para gestionar diversas entradas, como señales
 Para ejecutar las simulaciones, se automatiza el proceso con el makefile estudiado durante el curso
 A continuación se muestran los resultados de las simulaciones. 
 
-![Esquema del sistema](Resultado de la simulación: "GTKWAVE" /simu.png)
+![Resultados de la simu dados por "gtkwave"](MiCodigo/simu.png)
 
 
 
