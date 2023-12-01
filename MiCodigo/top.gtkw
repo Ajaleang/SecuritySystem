@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Wed Nov 29 15:28:54 2023
+[*]
+[dumpfile] "/home/danrou97/Downloads/blink/sim/top.vcd"
+[dumpfile_mtime] "Wed Nov 29 15:28:25 2023"
+[dumpfile_size] 1530
+[savefile] "/home/danrou97/Downloads/blink/top.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-8.316462 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 202
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@420
+testbech.OUTPUT_SIZE
+@28
+testbech.clk
+@29
+testbech.value
+[pattern_trace] 1
+[pattern_trace] 0
