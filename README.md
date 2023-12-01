@@ -1,14 +1,17 @@
 # Proyecto "Smart House"
 
 ## Introducción
+El presente informe documenta el diseño, implementación y funcionamiento de un sistema de alarma en tiempo real utilizando una FPGA. Este proyecto fue desarrollado como parte de la materia de Electrónica Digital en la Universidad Nacional de Colombia.
 
-El proyecto "Smart House" surge como respuesta a la creciente demanda de sistemas de seguridad eficientes y personalizables para el hogar. La combinación de una FPGA y diversos sensores permite crear un entorno inteligente y escalable capaz de detectar situaciones potencialmente peligrosas, como la presencia de movimiento o la existencia de gases nocivos. Este informe profundizará en los aspectos técnicos, los desafíos abordados y las decisiones de diseño que respaldan el desarrollo del sistema.
+El proyecto "Smart House" surge como respuesta a la creciente demanda de sistemas de seguridad eficientes y personalizables para el hogar. La combinación de una FPGA y diversos sensores permite crear un entorno inteligente y escalable capaz de detectar situaciones potencialmente peligrosas, como la presencia de movimiento o la existencia de gases nocivos. Este informe profundizará en los aspectos técnicos, los desafíos abordados y las decisiones de diseño que respaldan el desarrollo del sistema. "Smart House" se presenta como un proyecto en evolución constante. Las contribuciones de la comunidad son esenciales para enriquecer el sistema y abordar futuras mejoras. Se alienta a otros desarrolladores a participar en el desarrollo continuo del proyecto.
+
 
 ## Descripción del Problema
 
 La seguridad residencial es un aspecto fundamental en la vida moderna, y tradicionalmente se ha abordado mediante sistemas propietarios y costosos. Este proyecto busca superar estas limitaciones, proporcionando un sistema de seguridad inteligente, asequible y personalizable. La detección temprana de eventos como movimiento y gas permite tomar medidas inmediatas para garantizar la seguridad del hogar y sus ocupantes.
 
 ## Objetivos
+El objetivo primordial del proyecto "Smart House" es lograr la implementación exitosa de un sistema de seguridad innovador y adaptable para entornos residenciales. Este objetivo se desglosa en metas específicas destinadas a garantizar un sistema robusto y eficiente que aborde las necesidades de seguridad del hogar de manera efectiva.
 
 ### Detección de Movimiento
 
@@ -30,7 +33,7 @@ La activación de un altavoz para generar una alarma sonora refuerza la capacida
 
 ### FPGA
 
-La FPGA actúa como el núcleo o cerebro del sistema, coordinando todas las operaciones. Su capacidad de programación flexible permite adaptarse a diversas configuraciones y requisitos del proyecto.
+La FPGA actúa como el núcleo o cerebro del sistema, coordinando todas las operaciones. Su capacidad de programación flexible permite adaptarse a diversas configuraciones y requisitos del proyecto. La FPGA determina el flujo de acciones según las señales de entrada y se comunicará constantemente con el servidor alojado en el microcontrolador ESP32
 
 ### Sensor de Movimiento y Sensor de Gas
 
@@ -54,10 +57,20 @@ Es crucial seguir las instrucciones de conexión de los sensores a la FPGA para 
 
 ### Compilación y Carga
 
-La compilación del código fuente y la carga del programa en la FPGA se realiza utilizando las herramientas open source proporcionadas durante el curso. 
+La compilación del código fuente y la carga del programa en la FPGA se realiza utilizando las herramientas open source proporcionadas durante el curso. La elección de utilizar herramientas open source durante el desarrollo y la implementación del proyecto refuerza la accesibilidad y transparencia del sistema. Esta decisión permite a la comunidad de desarrolladores comprender y mejorar el sistema de manera colaborativa.
+
 
 ### Monitoreo y control
 
 El usuario puede monitorear las notificaciones del bot de Telegram para recibir alertas en tiempo real sobre eventos detectados. Además, la activación del altavoz proporciona una señal sonora adicional. Mediante este mismo bot, el usuarió podra desactivar la alarma en caso de ser necesario.
+## Conclusiones
+
+El proyecto ha logrado cumplir con los objetivos establecidos, proporcionando un sistema funcional y robusto de alarma utilizando una FPGA. La combinación de la detección de movimiento, la interacción con un teclado matricial y la generación de sonido ofrece una solución completa para la aplicación propuesta.
+
+## Mejoras Futuras
+
+1. Incorporar más características de seguridad.
+2. Mejorar la interfaz de usuario del teclado matricial.
+3. Optimizar el consumo de energía del sistema.
 
 
