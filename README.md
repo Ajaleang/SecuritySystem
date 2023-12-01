@@ -36,10 +36,15 @@ La activación de un altavoz para generar una alarma sonora refuerza la capacida
 La FPGA actúa como el núcleo o cerebro del sistema, coordinando todas las operaciones. Su capacidad de programación flexible permite adaptarse a diversas configuraciones y requisitos del proyecto. La FPGA determina el flujo de acciones según las señales de entrada y se comunicará constantemente con el servidor alojado en el microcontrolador ESP32
 A continuación, se muestra el RTL de la capa principal a modo de ilustración de la arquitectura.
 
-![Esquema del sistema](MiCodigo/top.png)
+![Esquema general del sistema](MiCodigo/top.png)
 
 
 La salida llamada "mensaje" es la encargada de comunicar los datos adquiridos por la FPGA en el servidor remoto alojado en la ESP32.
+
+
+El modulo que maneja toda la lógica se observa en el siguiente RTL:
+
+![Esquema interno del sistema](MiCodigo/rtlsvg.svg)
 
 ### Sensor de Movimiento y Sensor de Gas
 
